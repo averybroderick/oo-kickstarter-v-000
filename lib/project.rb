@@ -7,7 +7,10 @@ class Project
     @backers = []
   end
 
-  def find_backer
+  def find_backer(backer_name)
+    @backers.find do |backer|
+      backer.name == backer_name
+    end
   end
 
   def add_backer(backer)
