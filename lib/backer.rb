@@ -7,6 +7,12 @@ class Backer
     @backed_projects = []
   end
 
+  def find_project(project_title)
+    @backed_projects.find do |project|
+      project.title == project_title
+    end
+  end
+
   def back_project(project)
     @backed_projects << project
     project.add_backer(self)
